@@ -9,8 +9,8 @@ module.exports = {
 //   entry: "./src/index.js",
   entry: {
     // 动态导入
-    requireindex: './src/requireindex.js'
-    // index: './src/index.js',
+    // requireindex: './src/requireindex.js'
+    index: './src/index.js',
     // shared: 'lodash', // 入口依赖提取公共依赖
     // index: {
     //   import: './src/index.js',
@@ -28,7 +28,7 @@ module.exports = {
     // filename: "bundle.js",
 
     // 根据入口起点定义的名称,动态地产生 bundle 名称
-    filename: '[name].bundle.js',
+    filename: '[name].bundle.[contenthash].js',
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
@@ -38,6 +38,18 @@ module.exports = {
   //     chunks: 'all',
   //   },
   // },
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       // title: '管理输出',

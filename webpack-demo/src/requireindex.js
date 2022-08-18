@@ -1,4 +1,5 @@
 
+// 代码分离，动态导入
 // function getComponent() {
 //     // import() 会返回一个 promise
 //   return import('lodash')
@@ -21,6 +22,8 @@ async function getComponent() {
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     return element;
 }
+
+console.log('测试hash改动')
 
 getComponent().then((component) => {
   document.body.appendChild(component);
