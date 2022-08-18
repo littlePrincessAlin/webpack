@@ -8,14 +8,16 @@ module.exports = {
   devtool: 'inline-source-map',
 //   entry: "./src/index.js",
   entry: {
-    index: './src/index.js',
+    // 动态导入
+    requireindex: './src/requireindex.js'
+    // index: './src/index.js',
     // shared: 'lodash', // 入口依赖提取公共依赖
     // index: {
     //   import: './src/index.js',
     //   dependOn: 'shared',
     // },
-    print: './src/print.js',
-    another: './src/another-module.js',
+    // print: './src/print.js',
+    // another: './src/another-module.js',
     // another: {
     //   import: './src/another-module.js',
     //   dependOn: 'shared',
@@ -30,12 +32,12 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
-  optimization: {
-    // runtimeChunk: 'single',
-    splitChunks: {
-      chunks: 'all',
-    },
-  },
+  // optimization: {
+  //   // runtimeChunk: 'single',
+  //   splitChunks: {
+  //     chunks: 'all',
+  //   },
+  // },
   plugins: [
     new HtmlWebpackPlugin({
       // title: '管理输出',
