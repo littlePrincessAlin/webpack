@@ -40,6 +40,7 @@ module.exports = {
   // },
   optimization: {
     runtimeChunk: 'single',
+    moduleIds: 'deterministic', // 对于第三方库打出来的vendor hash值不改变
     splitChunks: {
       cacheGroups: {
         vendor: {

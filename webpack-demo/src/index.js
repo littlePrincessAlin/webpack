@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import printMe from './print.js';
+import Print2 from './print2.js';
 // 管理输出时，移除了style-loader和css-loader，并移除以下代码
 // import './style.css';
 // import Icon from './assets/icon.jpeg';
@@ -20,9 +21,11 @@ function component() {
 
     // element.appendChild(myIcon);
 
-    btn.innerHTML = 'Click me and check the console!';
-    btn.onclick = printMe;
-    element.appendChild(btn);
+    // btn.innerHTML = 'Click me and check the console!';
+    // btn.onclick = printMe;
+    // element.appendChild(btn);
+
+    element.onclick = Print2.bind(null, 'Hello webpack!');
     return element;
   }
   
