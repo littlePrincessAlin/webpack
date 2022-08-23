@@ -12,7 +12,7 @@ module.exports = (env) => {
       filename: "webpack-numbers.js",
       library: {
         name: "webpackNumbers",
-        type: "umd",
+        type: "amd",
       },
     },
   };
