@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npx webpack serve",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.1"
   }
 }
